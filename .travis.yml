@@ -11,7 +11,7 @@ cache:
     - node_modules
     - client/node_modules
 install:
-  - npm install
+  - yarn install
 script:
   - sleep 3
-  - npm run test
+  - yarn test
