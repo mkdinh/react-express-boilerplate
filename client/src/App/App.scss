@@ -1,3 +1,9 @@
-body {
-  background: blue;
+.root-app {
+  margin: 0 2.5%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.root-app ul li {
+  font-size: 1.25rem;
 }
