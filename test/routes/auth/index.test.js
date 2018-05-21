@@ -2,14 +2,23 @@ const { validUser } = require("../../data/users");
 const userFactory = require("../../factories/userFactory");
 
 describe("Local Authentication", () => {
-  let server;
+  let server, request;
 
   beforeEach(async () => {
-    server = await makeServer();
+    // server = await makeServer();
+    request = await SuperRequest.connect();
   });
 
   afterEach(async () => {
-    await server.closeConnection();
+    // await server.closeConnection();
+    await request.closeConnection();
+  });
+
+  it("hit authenticated before hitting route", async () => {
+    request = await SuperRequest.connect({ authenticated: true });
+    const res = await request
+      .get("/auth/private")
+      .set({ authorization: request._token });
   });
 
   describe("POST /signup", () => {
@@ -18,9 +27,7 @@ describe("Local Authentication", () => {
       const userInputs = { ...validUser };
 
       try {
-        res = await request(server)
-          .post("/auth/signup")
-          .send(userInputs);
+        res = await request.post("/auth/signup").send(userInputs);
       } catch (err) {
         console.log(err);
       }
@@ -33,9 +40,7 @@ describe("Local Authentication", () => {
       let res;
       const userInputs = { ...validUser, username: "", password: "" };
 
-      res = await request(server)
-        .post("/auth/signup")
-        .send(userInputs);
+      res = await request.post("/auth/signup").send(userInputs);
 
       expect(res.body).to.eql({
         error: "You must provide an email and password",
@@ -48,7 +53,7 @@ describe("Local Authentication", () => {
     it("returns jwt token if credentials is valid", async () => {
       const { email, _password } = await userFactory();
 
-      const res = await request(server)
+      const res = await request
         .post("/auth/signin-local")
         .send({ email, password: _password });
 
@@ -57,7 +62,7 @@ describe("Local Authentication", () => {
     });
 
     it("returns 401 error if credentials is invalid", async () => {
-      const res = await request(server)
+      const res = await request
         .post("/auth/signin-local")
         .send({ email: "wrong username", password: "wrong password" });
 
