@@ -1,0 +1,46 @@
+{
+  "name": "notepad-fullstack",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:mkdinh/notepad-fullstack.git",
+  "author": "Michael Dinh <mkdinh94@gmail.com>",
+  "jest": {
+    "verbose": false,
+    "testMatch": ["**/?(*.)(spec|test).js?(x)"],
+    "testPathIgnorePatterns": ["/node_modules/", "/client", "./keys"],
+    "setupTestFrameworkScriptFile": "./test/setup.js"
+  },
+  "scripts": {
+    "start": "node start",
+    "dev": "nf start",
+    "start-server": "nodemon index.js",
+    "start-client": "node scripts/start.js",
+    "test": "mocha --recursive --timeout 10000 --colors",
+    "test:watch": "yarn test --watch",
+    "jest:watch": "jest --watch --runInBand"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^2.0.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jwt-simple": "^0.5.1",
+    "mongoose": "^5.1.1",
+    "morgan": "^1.9.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "redis": "^2.8.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "jest": "^22.4.4",
+    "mocha": "^5.2.0",
+    "mockgoose": "^7.3.5",
+    "really-need": "^1.9.2",
+    "sinon": "^5.0.7",
+    "supertest": "^3.1.0"
+  }
+}
