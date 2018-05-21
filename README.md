@@ -14,7 +14,7 @@ cd express-react-boilerplate
 ### installing server dependencies
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
 npm install
 ```
@@ -22,7 +22,7 @@ npm install
 ### install client dependencies
 
 ```
-express-react-boilerplate/client
+express-react-boilerplate/client/
 
 npm install
 ```
