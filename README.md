@@ -16,7 +16,7 @@ cd express-react-boilerplate
 ```
 express-react-boilerplate/
 
-npm install
+  npm install
 ```
 
 ### install client dependencies
@@ -24,7 +24,7 @@ npm install
 ```
 express-react-boilerplate/client/
 
-npm install
+  npm install
 ```
 
 ## Test
@@ -34,17 +34,17 @@ Tests are done seperately for server and client
 ### run test for server
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
-yarn test:watch
+  yarn test:watch
 ```
 
 ### run test for client
 
 ```
-express-react-boilerplate/client
+express-react-boilerplate/client/
 
-yarn test:watch
+  yarn test:watch
 ```
 
 ## Start Development Mode
@@ -52,25 +52,25 @@ yarn test:watch
 ### To run both server and client
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
-yarn dev
+  yarn dev
 ```
 
 ### To run only server
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
-yarn start-server
+  yarn start-server
 ```
 
 ### To run only server
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
-yarn start-client
+  yarn start-client
 ```
 
 ## Deployment
@@ -80,9 +80,9 @@ yarn start-client
 ### To run only server
 
 ```
-express-react-boilerplate
+express-react-boilerplate/
 
-yarn build
+  yarn build
 ```
 
 ```
