@@ -84,7 +84,3 @@ express-react-boilerplate/
 
   yarn build
 ```
-
-```
-
-```
