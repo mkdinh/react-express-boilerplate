@@ -1,8 +1,7 @@
-const User = require("../../models/").User;
+const { User } = require("../../models/");
 const { validUser } = require("../data/users");
 const mockgoose = require("../test_helpers/mockgoose");
 const sinon = require("sinon");
-const { expect } = require("chai");
 
 describe("User model", () => {
   let user;

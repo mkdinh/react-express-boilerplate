@@ -18,12 +18,13 @@ const JwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
   try {
     user = await User.find({ _id: payload.sub });
   } catch (err) {
-    return done(err, false);
+    return done(err, false, { error: "Something is wrong with this request" });
   }
   // return if user if found
   if (user) return done(null, user);
   // else return that search is complete but did not find user
-  else return done(null, false);
+  else
+    return done(null, false, { error: "Something is wrong with this request" });
 });
 
 // setup options for local strategy
