@@ -6,8 +6,14 @@
   "author": "Michael Dinh <mkdinh94@gmail.com>",
   "jest": {
     "verbose": false,
-    "testMatch": ["**/?(*.)(spec|test).js?(x)"],
-    "testPathIgnorePatterns": ["/node_modules/", "/client", "./keys"],
+    "testMatch": [
+      "**/?(*.)(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/client",
+      "./keys"
+    ],
     "setupTestFrameworkScriptFile": "./test/setup.js"
   },
   "scripts": {
@@ -41,7 +47,6 @@
     "jest": "^22.4.4",
     "mocha": "^5.2.0",
     "mockgoose": "^7.3.5",
-    "really-need": "^1.9.2",
     "sinon": "^5.0.7",
     "supertest": "^3.1.0"
   }

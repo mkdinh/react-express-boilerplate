@@ -1,5 +1,6 @@
 const webpack = require("webpack");
 const merge = require("webpack-merge");
+const FriendErrorsWebpackPlugin = require("friendly-errors-webpack-plugin");
 const common = require("./webpack.common.js");
 const path = require("path");
 
@@ -12,16 +13,18 @@ module.exports = merge(common, {
     publicPath: "/", // here's the change
     contentBase: path.resolve(__dirname, "./public/"),
     // specify webpack-dev-server port
-    port: 3000,
+    port: 8080,
+    // open: true,
     // enable hot reload
-    hot: true,
+    hot: true
   },
 
   plugins: [
     // display file name during hot reload
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
+    new FriendErrorsWebpackPlugin()
   ],
 
-  mode: "development",
+  mode: "development"
 });
