@@ -1,4 +1,5 @@
 const { validUser } = require("../../data/users");
+
 describe("Local Authentication", () => {
   let server;
 
@@ -10,13 +11,13 @@ describe("Local Authentication", () => {
     await server.closeConnection();
   });
 
-  it("POST /signup returns token with valid inputs", async () => {
+  it("POST local/signup returns token with valid inputs", async () => {
     let res;
     const userInputs = { ...validUser };
 
     try {
       res = await request(server)
-        .post("/auth/local/signup")
+        .post("/auth/signup")
         .send(userInputs);
     } catch (err) {
       console.log(err);
@@ -26,13 +27,13 @@ describe("Local Authentication", () => {
     expect(res.body).to.have.property("token");
   });
 
-  it("POST /signup returns error with invalid inputs", async () => {
+  it("POST local/signup returns error with invalid inputs", async () => {
     let res;
     const userInputs = { ...validUser, username: "", password: "" };
 
     try {
       res = await request(server)
-        .post("/auth/local/signup")
+        .post("/auth/signup")
         .send(userInputs);
     } catch (err) {
       // expect(res.errors).to.have.property("token");

@@ -10,7 +10,7 @@ function tokenForUser(user) {
 
 exports.signin = (req, res, next) => {
   // assumed that user is authenticated
-  res.send({ token: tokenForUser(req.user) });
+  res.status(203).send({ token: tokenForUser(req.user) });
 };
 
 exports.signup = async (req, res, next) => {

@@ -29,35 +29,35 @@ const JwtLogin = new JwtStrategy(jwtOptions, async (payload, done) => {
 // setup options for local strategy
 //--------------------------------------------------------
 const localOptions = {
-  username: "email",
+  usernameField: "email",
 };
 
 const localLogin = new LocalStrategy(
   localOptions,
   async (email, password, done) => {
-    let user;
+    let user, verified;
     // check if email exists in database
     try {
-      user = await User.find({ email });
+      user = await User.findOne({ email });
+      // if user does not exists
+      if (!user) return done(null, false);
+      // if user exists, verify password
+      verified = await user.verifyPassword(password);
+      if (verified) {
+        return done(null, user);
+      } else {
+        // return unauthorized if password does not watch
+        return done(null, false);
+      }
     } catch (err) {
       return done(err, false);
-    }
-    // if user does not exists
-    if (!user) return done(null, false);
-    // if user exists, verify password
-    const verified = await user.verifyPassword(pasword);
-    if (verified) {
-      return done(null, user);
-    } else {
-      // return unauthorized if password does not watch
-      return done(null, false);
     }
   },
 );
 
 // use passport strategies
 //--------------------------------------------------------
-passport.use(JwtLogin);
 passport.use(localLogin);
+passport.use(JwtLogin);
 
 module.exports = passport;

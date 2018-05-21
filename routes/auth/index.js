@@ -1,8 +1,11 @@
 const router = require("express").Router();
-const localAuthRoutes = require("./local.auth");
-const jwtAuthRoutes = require("./jwt.auth");
+const { requireSignin } = require("../../middlewares/authentication");
+const authController = require("../../controllers/authController");
+
 // handle different authentication methods
 //--------------------------------------------------------
-router.use("/local", localAuthRoutes);
-router.use("/jwt", jwtAuthRoutes);
+router.post("/signin-local", requireSignin, authController.signin);
+
+router.post("/signup", authController.signup);
+
 module.exports = router;
