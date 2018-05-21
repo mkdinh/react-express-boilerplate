@@ -4,6 +4,8 @@ module.exports = (function() {
       return require("./prod");
     case "test":
       return require("./test");
+    case "ci":
+      return require("./ci");
     default:
       return require("./dev");
   }

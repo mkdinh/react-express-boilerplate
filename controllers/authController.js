@@ -17,7 +17,7 @@ exports.signup = async (req, res, next) => {
   let newUser, userDb;
   // check if username and password exists
   if (!req.body.email || !req.body.password)
-    return status(422).send({
+    return res.status(422).send({
       error: "You must provide an email and password",
     });
   // check if user email exists in database
