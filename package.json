@@ -13,10 +13,12 @@
   "scripts": {
     "start": "node start",
     "dev": "nf start",
+    "build": "node scripts/build.js",
     "start-server": "nodemon index.js",
     "start-client": "node scripts/start.js",
     "mocha:watch": "mocha --recursive --timeout 10000 --colors",
     "test:watch": "jest --runInBand --watch",
+    "test:coverage": "jest --coverage",
     "test": "jest --runInBand --forceExit"
   },
   "license": "MIT",
