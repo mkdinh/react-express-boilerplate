@@ -16,8 +16,8 @@
     "start-server": "nodemon index.js",
     "start-client": "node scripts/start.js",
     "mocha:watch": "mocha --recursive --timeout 10000 --colors",
-    "test:watch": "yarn test --watch",
-    "test": "jest --runInBand"
+    "test:watch": "jest --runInBand --watch",
+    "test": "jest --runInBand --forceExit"
   },
   "license": "MIT",
   "dependencies": {
