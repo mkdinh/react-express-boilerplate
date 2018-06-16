@@ -45,20 +45,11 @@ module.exports = {
         ]),
         exclude: /node_modules/
       },
-      // {
-      //   // load css file as string and apply styles
-      //   test: /.css$/,
-      //   use: [
-      //     devMode ? "style-loader" : MiniCssExtractPlugin.loader,
-      //     "css-loader"
-      //   ]
-      // },
       {
-        test: /\.s?[ac]ss$/,
+        test: /\.(s?[ac]ss|css)$/,
         use: [
           devMode ? "style-loader" : MiniCssExtractPlugin.loader,
           "css-loader",
-          // "postcss-loader",
           "sass-loader"
         ]
       }

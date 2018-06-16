@@ -11,7 +11,7 @@ const app = express();
 const path = require("path");
 const server = http.createServer(app);
 const routes = require("./routes");
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT;
 
 // Configure Express server
 //--------------------------------------------------------

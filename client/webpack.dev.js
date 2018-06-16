@@ -13,7 +13,7 @@ module.exports = merge(common, {
     publicPath: "/", // here's the change
     contentBase: path.resolve(__dirname, "./public/"),
     // specify webpack-dev-server port
-    port: 8080,
+    port: 3000,
     // open: true,
     // enable hot reload
     hot: true
