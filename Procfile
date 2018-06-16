@@ -1,2 +1,2 @@
-server: yarn start-server
-client: yarn start-client
+server: yarn start:server
+client: yarn start:client

@@ -1,5 +1,5 @@
 {
-  "name": "notepad-fullstack",
+  "name": "mern-boilerplate",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:mkdinh/notepad-fullstack.git",
@@ -17,11 +17,11 @@
     "setupTestFrameworkScriptFile": "./test/setup.js"
   },
   "scripts": {
-    "start": "node start",
+    "start": "node index.js",
     "dev": "nf start",
     "build": "node scripts/build.js",
-    "start-server": "nodemon index.js",
-    "start-client": "node scripts/start.js",
+    "start:server": "nodemon index.js",
+    "start:client": "node scripts/start.js",
     "mocha:watch": "mocha --recursive --timeout 10000 --colors",
     "test:watch": "jest --runInBand --watch",
     "test:coverage": "jest --coverage",
@@ -44,6 +44,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-http": "^4.0.0",
+    "foreman": "^3.0.0",
     "jest": "^22.4.4",
     "mocha": "^5.2.0",
     "mockgoose": "^7.3.5",
