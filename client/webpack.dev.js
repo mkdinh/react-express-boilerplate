@@ -14,17 +14,17 @@ module.exports = merge(common, {
     contentBase: path.resolve(__dirname, "./public/"),
     // specify webpack-dev-server port
     port: 3000,
-    // open: true,
+    open: true,
     // enable hot reload
-    hot: true
+    hot: true,
   },
 
   plugins: [
     // display file name during hot reload
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
-    new FriendErrorsWebpackPlugin()
+    new FriendErrorsWebpackPlugin(),
   ],
 
-  mode: "development"
+  mode: "development",
 });

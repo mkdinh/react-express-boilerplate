@@ -1,5 +1,6 @@
 // Import dependencies
 //--------------------------------------------------------
+require("dotenv").config();
 const express = require("express");
 const http = require("http");
 const morgan = require("morgan");
@@ -7,8 +8,8 @@ const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const keys = require("./keys");
-const app = express();
 const path = require("path");
+const app = express();
 const server = http.createServer(app);
 const routes = require("./routes");
 const PORT = process.env.PORT;
@@ -20,6 +21,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("combined"));
 app.use(routes);
+
 // Configure Mongoose
 //--------------------------------------------------------
 mongoose.Promise = global.Promise;
