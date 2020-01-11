@@ -4,7 +4,7 @@ const {
   requireAuth,
 } = require("../../middlewares/authentication");
 
-const authController = require("../../controllers/authController");
+const authController = require("../../controllers/auth-controller");
 
 // handle different authentication methods
 //--------------------------------------------------------
